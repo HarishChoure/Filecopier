@@ -3,17 +3,18 @@ import os
 def filecopy(fileName):
     copiedFile = fileName
 
-    if os.path.isfile(copiedFile):
-        file_name, file_extension = os.path.splitext(copiedFile)
-        i = 1
-        new_file = file_name + " - Copy" + file_extension
+    copiedFile = fileName
 
-        while os.path.isfile(new_file):
-            new_file = file_name + " - Copy (" + str(i) + ")" + file_extension
-            i += 1
-        with open(copiedFile, 'rb') as in_file, open(new_file, 'wb') as out_file:
-            out_file.write(in_file.read())
-        print("Successfully file is copied  " + new_file)
+    file_name, file_extension = os.path.splitext(copiedFile)
+    i = 1
+    new_file = file_name + " - Copy" + file_extension
+
+    while os.path.isfile(new_file):
+        new_file = file_name + " - Copy (" + str(i) + ")" + file_extension
+        i += 1
+    with open(copiedFile, 'rb') as in_file, open(new_file, 'wb') as out_file:
+        out_file.write(in_file.read())
+    print("Successfully file is copied  " + new_file)
 
 
 if __name__ == '__main__':
