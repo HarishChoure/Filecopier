@@ -1,8 +1,7 @@
 import os
 
 def filecopy(fileName):
-    copiedFile = fileName
-
+   
     copiedFile = fileName
 
     file_name, file_extension = os.path.splitext(copiedFile)
